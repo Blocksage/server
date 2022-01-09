@@ -1,0 +1,23 @@
+{
+  "name": "blocksage-server",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "graphql-request": "^3.7.0"
+  },
+  "nodemonConfig": {
+    "ignore": ["api-test/*", "node_modules/**/node_modules"],
+    "verbose": true,
+    "env": {
+      "NODE_ENV": "dev"
+    },  
+    "delay": 1000
+  }
+}
