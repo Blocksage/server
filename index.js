@@ -3,6 +3,8 @@ var bodyParser = require('body-parser')
 const app = express()
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+app.use(require('./middleware/hasura'))
+
 const port = process.env.PORT || 3000
 
 app.get('/', require('./api/static/root'))
