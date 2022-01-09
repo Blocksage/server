@@ -33,7 +33,7 @@ module.exports = async (req, res) => {
             }
         }
         const token = jwt.sign(jwtObject, process.env.BLOCKSAGE_JWT_SECRET, {algorithm:'HS256'});
-        res.send(token)
+        res.send({token})
     } else {
         console.error('No user found')
         res.status(401).send('No user found with given credentials')
