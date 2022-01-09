@@ -1,1 +1,12 @@
 POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "ipians.aman@gmail.com",
+    "password": "amangautam"
+}
+
+###
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
