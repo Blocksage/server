@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
     }
     
     try {
-        response = await gql.client.request(gqlConstants.SEARCH_USER, {
+        response = await gql.client.request(gqlConstants.LOGIN, {
             email: req.body.email,
             password: req.body.password
         })
