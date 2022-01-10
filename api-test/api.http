@@ -27,3 +27,9 @@ Content-Type: application/json
         "lastName": "Gautam"
     }
 }
+
+
+###
+
+GET http://localhost:3000/v1/policies
+x-api-key: ae873c63-5048-4062-b1d4-b98a042fe266

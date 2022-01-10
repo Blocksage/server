@@ -18,5 +18,21 @@ module.exports = {
       id
       email
     }
+  }`,
+
+  POLICY_FROM_KEY: `query PoliciesFromKey($key:uuid!) {
+    keys_by_pk(id: $key) {
+      id
+      userByUser {
+        policies {
+          title
+          checklist
+          createdAt
+          id
+          details
+          slug
+        }
+      }
+    }
   }`
 }
