@@ -21,7 +21,9 @@ Content-Type: application/json
 
 {
     "input": {
-        "email": "ipians2.aman@gmail.com",
-        "password": "amangautam"
+        "email": "ipians6.aman@gmail.com",
+        "password": "amangautam",
+        "firstName": "Aman",
+        "lastName": "Gautam"
     }
 }
