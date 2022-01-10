@@ -11,9 +11,15 @@ app.get('/', require('./api/static/root'))
 app.post('/auth/login', require('./api/auth/login'))
 app.post('/auth/register', require('./api/auth/register'))
 app.get('/v1/policies', require('./api/headless/policies'))
+app.post('/v1/task', require('./api/headless/task'))
 
 if (!process.env.BLOCKSAGE_JWT_SECRET) {
   console.error('BLOCKSAGE_JWT_SECRET not set')
+  process.exit(1)
+}
+
+if (!process.env.BLOCKSAGE_EFFECT_PVT_KEY) {
+  console.error('BLOCKSAGE_EFFECT_PVT_KEY not set')
   process.exit(1)
 }
 

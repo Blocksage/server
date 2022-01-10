@@ -34,5 +34,21 @@ module.exports = {
         }
       }
     }
+  }`,
+
+  POLICY_FROM_KEY_WITH_SLUG: `query PoliciesFromKeyWithSlug($key: uuid!, $slug:String) {
+    keys_by_pk(id: $key) {
+      id
+      userByUser {
+        policies(where: {slug: {_eq: $slug}}) {
+          title
+          checklist
+          createdAt
+          id
+          details
+          slug
+        }
+      }
+    }
   }`
 }
