@@ -23,7 +23,7 @@ module.exports = async (req, res) => {
                 "https://hasura.io/jwt/claims": {
                     "x-hasura-allowed-roles": ["user"],
                     "x-hasura-default-role": "user",
-                    "x-hasura-user-id": "1234567890",
+                    "x-hasura-user-id": response.user[0].id,
                 }
             }
             const token = jwt.sign(jwtObject, process.env.BLOCKSAGE_JWT_SECRET, {algorithm:'HS256'});
