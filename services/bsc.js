@@ -32,13 +32,13 @@ module.exports = {
         return {campaign, batch, batchResponse}
     },
 
-    getResults: async () => {
-        const batchId = 1391569403904
+    getResults: async (batchId) => {
+        // const batchId = 1391569403904
         const client = new EffectClient('jungle')
         // const account = createAccount(process.env.BLOCKSAGE_EFFECT_PVT_KEY)
         // const web3 = createWallet(account)
         // const effectAccount = await client.connectAccount(web3)
         const taskResults = await client.force.getTaskSubmissionsForBatch(batchId)
-        console.log('taskResults for new batch', taskResults)
+        return taskResults
     }
 }

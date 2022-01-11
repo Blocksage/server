@@ -53,9 +53,25 @@ module.exports = {
     }
   }`,
 
-  INSERT_TASK: `mutation InsertTask($batch:Int,$task:jsonb,$user:uuid!,$webhook:String) {
+  INSERT_TASK: `mutation InsertTask($batch:bigint,$task:jsonb,$user:uuid!,$webhook:String) {
     insert_task_one(object: {batch: $batch, task: $task, user: $user, webhook: $webhook}) {
       id
     }
-  }`
+  }`,
+
+  GET_PENDING_TASKS: `query PendingTasks {
+    task(where: {status: {_eq: "pending"}}) {
+      batch
+      user
+      id
+      webhook
+    }
+  }`,
+
+  UPDATE_TASK_RESULT: `mutation UpdateTaskResult($task: uuid!) {
+    update_task_by_pk(pk_columns: {id: $task}, _set: {status: "complete"}) {
+      id
+    }
+  }
+  `
 }

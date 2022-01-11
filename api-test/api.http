@@ -51,3 +51,4 @@ x-api-key: 0ff82219-5c50-4ef9-b7a4-b44a42503bc1
 
 ###
 
+GET http://localhost:3000/check-results
