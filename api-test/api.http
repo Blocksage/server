@@ -39,8 +39,15 @@ x-api-key: ae873c63-5048-4062-b1d4-b98a042fe266
 
 POST http://localhost:3000/v1/task
 Content-Type: application/json
-x-api-key: ae873c63-5048-4062-b1d4-b98a042fe266
+x-api-key: 0ff82219-5c50-4ef9-b7a4-b44a42503bc1
 
 {
-    "policy": "policy-titleq"
+    "policy": "Violence",
+    "video": "https://www.youtube.com/watch?v=7EBPa8sKGCs",
+    "sampleSize": 4,
+    "webhook": "https://en8s5hmls79vs.x.pipedream.net/"
 }
+
+
+###
+
