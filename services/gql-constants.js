@@ -39,6 +39,7 @@ module.exports = {
   POLICY_FROM_KEY_WITH_SLUG: `query PoliciesFromKeyWithSlug($key: uuid!, $slug:String) {
     keys_by_pk(id: $key) {
       id
+      user
       userByUser {
         policies(where: {slug: {_eq: $slug}}) {
           title
@@ -49,6 +50,12 @@ module.exports = {
           slug
         }
       }
+    }
+  }`,
+
+  INSERT_TASK: `mutation InsertTask($batch:Int,$task:jsonb,$user:uuid!,$webhook:String) {
+    insert_task_one(object: {batch: $batch, task: $task, user: $user, webhook: $webhook}) {
+      id
     }
   }`
 }

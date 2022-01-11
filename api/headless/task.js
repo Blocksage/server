@@ -66,9 +66,28 @@ module.exports = async (req, res) => {
     }
 
     const blockChainResult = await bsc.publish(campaign, options)
-
-    console.log(blockChainResult)
-    res.send(response)
+    const batchId = blockChainResult.batch[0]?.batch_id
+    // save the response from blockchain in the database
+    const user = response.keys_by_pk.user
+    // {
+    //     "task": "{}",
+    //     "batch": 100,
+    //     "user": "58564f41-c0d7-4171-8a19-ed0ceaee3262",
+    //     "webhook": "https://en8s5hmls79vs.x.pipedream.net/"
+    //   }
+    try {
+        const response = await gql.client.request(gqlConstants.INSERT_TASK, {
+            task: JSON.stringify(blockChainResult),
+            batch: batchId,
+            user,
+            webhook: body.webhook
+        })
+        res.send(response)
+    } catch(err) {
+        console.error(err)
+        res.status(500).send({error: 'something went really wrong'})
+    }
+    // res.send(response)
 }
 
 function youtube_parser(url){

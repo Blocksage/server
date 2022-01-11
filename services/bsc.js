@@ -33,7 +33,7 @@ module.exports = {
     },
 
     getResults: async () => {
-        const batchId = 738734374912
+        const batchId = 1391569403904
         const client = new EffectClient('jungle')
         // const account = createAccount(process.env.BLOCKSAGE_EFFECT_PVT_KEY)
         // const web3 = createWallet(account)
